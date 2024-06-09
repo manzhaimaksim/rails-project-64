@@ -1,0 +1,36 @@
+# .github/workflows/rubocop-ci.yml
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: CI Rubocop and test
+    runs-on: ubuntu-latest
+    env:
+      api-dir: ./
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: Run bundle install
+        working-directory: ${{env.api-dir}}
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Check Rubocop Styles
+        run: make rubocop
+      
+      - name: Check Slim Styles
+        run: make lint
+
+      - name: Run test
+        run: make test
