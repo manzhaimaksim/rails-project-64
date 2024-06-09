@@ -27,10 +27,10 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Check Rubocop Styles
-        run: make rubocop
+        run: bundle exec make rubocop
       
       - name: Check Slim Styles
-        run: make lint
+        run: bundle exec make lint
 
       - name: Run test
-        run: make test
+        run: bundle exec make test
