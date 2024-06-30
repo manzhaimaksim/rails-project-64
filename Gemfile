@@ -20,7 +20,7 @@ gem 'puma', '>= 5.0'
 gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+gem "turbo-rails", '~> 1.0.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
@@ -54,6 +54,7 @@ gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'slim'
 gem 'slim_lint'
 gem 'stackprof'
 
