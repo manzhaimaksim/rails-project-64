@@ -1,0 +1,28 @@
+h1
+  | All Posts
+table
+  thead
+    tr
+      th
+        | Title
+      th
+        | Body
+      th
+        | Creator
+      th
+        | Category
+      th[colspan="1"]
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          = post.title
+        td
+          = post.body
+        td
+          = post.creator.email
+        td
+          = post.category.name
+        td
+          = link_to "Show", post
+
