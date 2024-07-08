@@ -50,10 +50,13 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'devise', '~> 4.9'
+gem 'faker'
+
 gem 'minitest-power_assert'
 gem 'rubocop-rails', require: false
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'simple_form'
 gem 'slim'
 gem 'slim_lint'
 gem 'stackprof'
