@@ -20,6 +20,9 @@ html
             ul.navbar-nav.me-auto.mb-2.mb-md-0
               li.nav-item
                 = link_to "Home", root_path, class: "nav-link active"
+              - if user_signed_in?
+                li.nav-item
+                  = link_to "New Post", new_post_path, class: "nav-link active"
             form.d-flex
               input.form-control.me-2[type="search" placeholder="Search" aria-label="Search"]
               button.btn.btn-light.rounded-pill.px-3[type="submit"]
@@ -35,4 +38,5 @@ html
       = notice
     p.alert
       = alert
+    .m-4
     = yield
