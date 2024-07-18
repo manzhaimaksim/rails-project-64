@@ -1,7 +1,8 @@
-require 'faker'
+# frozen_string_literal: true
 
 Category.destroy_all
 
-10.times do
-  Category.create(name: Faker::Science.science)
-end
+categories = ['Antropology', 'Earth Science', 'Engineering', 'Marketing', 'Materials Science', 'Physics',
+              'Political Science', 'Public Policy', 'Sociology']
+
+categories.each { |category| Category.create(name: category) }
