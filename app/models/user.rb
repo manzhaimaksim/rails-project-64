@@ -6,4 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts, foreign_key: 'creator_id', class_name: 'Post'
+  has_many :comments, foreign_key: 'creator_id', class_name: 'PostComment'
 end
