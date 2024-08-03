@@ -1,5 +1,29 @@
-p= @post.title
-p= @post.body
-p= @post.creator.email
-p= @post.category.name
-p= @post.created_at
+- content_for :title do
+  = @post.title
+p
+  strong.me-2 Title:
+  = @post.title
+p
+  strong.me-2 Body:
+  = @post.body
+p
+  strong.me-2 Creator:
+  = @post.creator.email
+p
+  strong.me-2 Category:
+  = @post.category.name
+
+- if user_signed_in?
+  p= link_to 'Add new comment', new_post_comment_path(@post)
+
+p= link_to 'Back', root_path
+
+hr
+
+h4= 'Comments'
+
+- @post_comments.each do |comment|
+  = render "comments/comment", comment: comment
+
+.d-flex
+  = link_to 'Back', :back, class: 'btn btn-outline-primary'

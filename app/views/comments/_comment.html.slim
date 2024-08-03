@@ -1,0 +1,10 @@
+.comment
+  p
+    strong.me-2 Content:
+    = comment.content
+  p
+    strong.me-2 Creator:
+    = comment.creator.email
+  - if user_signed_in?
+    p= link_to "Answer", new_post_comment_path(post_id: @post.id, parent_id: comment.id)
+  br

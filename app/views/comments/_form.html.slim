@@ -1,0 +1,5 @@
+.d-flex
+  = simple_form_for @comment, url: url, user: user do |f|
+    = f.input :content
+    = f.hidden_field :parent_id, value: params[:parent_id]
+    = f.button :submit, 'Add new comment', class: 'btn btn-outline-primary me-2'
