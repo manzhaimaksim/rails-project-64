@@ -3,6 +3,10 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   TargetRubyVersion: 3.2.2
   SuggestExtensions: false
+  Exclude:
+  - 'db/schema.rb'
+  - 'config/**/*'
+  - 'bin/**/*'
 
 Style/StringLiterals:
   Enabled: true
